@@ -26,5 +26,17 @@ namespace _531_web.Controllers
 
             return View();
         }
+        public ActionResult WorkoutGuide()
+        {
+            ViewBag.Message = "Your workout summary page.";
+
+                return View();
+        }
+        public ActionResult CustomWorkoutPlans()
+        {
+            ViewBag.Message = "A place to make your own workouts!";
+
+            return View();
+        }
     }
 }

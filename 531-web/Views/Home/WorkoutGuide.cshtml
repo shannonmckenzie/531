@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "WorkoutGuide";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div style=" background-color: darkgray">
+    <h2 style="text-align: center">WorkoutGuide</h2>
+    <div class="row">
+        <label class="col-md-3">
+            Bench Max
+            <input type="text" id="bench-max" style="width: 50px;" />
+        </label>
+        <label class="col-md-3">
+            Squat Max
+            <input type="text" id="squat-max" style="width: 50px;" />
+        </label>
+        <label class="col-md-3">
+            Deadlift Max
+            <input type="text" id="deadlift-max" style="width: 50px" />
+        </label>
+        <label class="col-md-3">
+            Shoulder Press Max
+            <input type="text" id="shoulder-press-max" style="width: 50px" />
+        </label>
+    </div>
+    <div class=" row" style="margin: 30px;">
+        <div class="text-center">
+            <div class="col-md-3"></div>
+            <label class="col-md-3">Click "get amount" button to get the amounts you need to lift!</label>
+            <button class="col-md-3" id="get-weight-amount-button">Get amounts</button>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+    <div class="row" id="wk1" style="display: none; margin-left: 60px; margin-bottom: 15px;">
+        <label class="col-md-3" id="bench-amount-wk1">Bench for wk 1</label>
+        <label class="col-md-3" id="squat-amount-wk1">Squat for wk 1</label>
+        <label class="col-md-3" id="deadLift-amount-wk1">DeadLift for wk 1</label>
+        <label class="col-md-3" id="shoulder-press-amount-wk1">Shoulder Press for wk 1</label>
+    </div>
+    <div class="row" id="wk1-amount"  style="display: none; margin-left: 60px; margin-bottom: 15px;">
+        <label class="col-md-3" id="bench-amount-1"></label>
+        <label class="col-md-3" id="squat-amount-1"></label>
+        <label class="col-md-3" id="deadLift-amount-1"></label>
+        <label class="col-md-3" id="shoulder-press-amount-1"></label>
+    </div>
+    <div class="row" id="wk2"  style="display: none; margin-left: 60px; margin-bottom: 15px;">
+        <label class="col-md-3" id="bench-amount-wk2">Bench for wk 2</label>
+        <label class="col-md-3" id="squat-amount-wk2">Squat for wk 2</label>
+        <label class="col-md-3" id="deadLift-amount-wk2">DeadLift for wk 2</label>
+        <label class="col-md-3" id="shoulder-press-amount-wk2">Shoulder Press for wk 2</label>
+    </div>
+    <div class="row" id="wk2-amount"style="display: none; margin-left: 60px; margin-bottom: 15px;">
+        <label class="col-md-3" id="bench-amount-2"></label>
+        <label class="col-md-3" id="squat-amount-2"></label>
+        <label class="col-md-3" id="deadLift-amount-2"></label>
+        <label class="col-md-3" id="shoulder-press-amount-2"></label>
+    </div>
+    <div class="row" id="wk3"style="display: none; margin-left: 60px; margin-bottom: 15px;">
+        <label class="col-md-3" id="bench-amount-wk3">Bench for wk 3</label>
+        <label class="col-md-3" id="squat-amount-wk3">Squat for wk 3</label>
+        <label class="col-md-3" id="deadLift-amount-wk3">DeadLift for wk 3</label>
+        <label class="col-md-3" id="shoulder-press-amount-wk3">Shoulder Press for wk 3</label>
+    </div>
+    <div class="row" id="wk3-amount" style="display: none; margin-left: 60px; margin-bottom: 15px;">
+        <label class="col-md-3" id="bench-amount-3"></label>
+        <label class="col-md-3" id="squat-amount-3"></label>
+        <label class="col-md-3" id="deadLift-amount-3"></label>
+        <label class="col-md-3" id="shoulder-press-amount-3"></label>
+    </div>
+</div>
+<script>
+
+    $('#get-weight-amount-button').click(function (e) {
+        var benchMax = $('#bench-max').val();
+        var squatMax = $('#squat-max').val();
+        var deadLiftMax = $('#deadlift-max').val();
+        var shoulderPressMax = $('#shoulder-press-max').val();
+
+        if (benchMax != null) {
+            benchMax = benchMax * .9;
+        }
+        $('#bench-amount-1').text(benchMax);
+
+        if(squatMax != null){
+            squatMax = squatMax * .9;
+        }
+        $('#squat-amount-1').text(squatMax);
+
+        if (deadLiftMax != null) {
+           deadLiftMax = deadLiftMax * .9;
+        }
+        $('#deadLift-amount-1').text(deadLiftMax);
+
+        if (shoulderPressMax != null) {
+            debugger
+            shoulderPressMax = shoulderPressMax * .9;
+        }
+        $('#shoulder-press-amount-1').text(shoulderPressMax);
+
+        $("#wk1").show();
+        $("#wk1-amount").show();
+    })
+</script>
+
